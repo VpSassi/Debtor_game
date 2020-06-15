@@ -1,2 +1,2 @@
-# Debtor_game
+# Dima_game
 a cool game
