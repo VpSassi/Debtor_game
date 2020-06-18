@@ -11,6 +11,8 @@ public class Bullet_script : MonoBehaviour
     private float angle;
     private Quaternion rotation;
 
+    private Bullet_script parent;
+
     void Start()
     {
         crosshair = GameObject.Find("Crosshair");
@@ -28,5 +30,12 @@ public class Bullet_script : MonoBehaviour
     {
         // go bullet go!
         transform.position += direction * Time.deltaTime * crosshairScript.bulletSpeed;
+    }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        Vector3 reflectDir = Vector3.Reflect(direction, col.contacts[0].normal);
+        float rotation = Mathf.Atan2(reflectDir.y, reflectDir.x) * Mathf.Rad2Deg;
+        transform.eulerAngles = new Vector3(0, 0, rotation);
+        direction = reflectDir;
     }
 }

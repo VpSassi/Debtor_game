@@ -27,7 +27,7 @@ public class Camera_script : MonoBehaviour
 
         transform.position =  new Vector3(Dima.transform.position.x, Dima.transform.position.y + heightOffset, -10f);
 
-        // TODO: smoother camera size scaling
+        // TODO: smoother camera size scaling?
         if (distance > cameraSizeMin && distance < cameraSizeMax) {
             mainCamera.orthographicSize = distance;
         }

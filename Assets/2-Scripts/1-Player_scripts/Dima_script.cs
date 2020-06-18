@@ -18,6 +18,8 @@ public class Dima_script : MonoBehaviour
 
     public Transform bulletPrefab;
 
+    public int health = 1;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -47,13 +49,25 @@ public class Dima_script : MonoBehaviour
             Instantiate(bulletPrefab, makarov.transform.position, Quaternion.identity);
             bullets = bullets - 1;
         }
+
+        if (health <= 0) {
+            // TODO: proper death stuff
+            print("DED");
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
+    void OnCollisionEnter2D(Collision2D col) {
         isGrounded = true;
     }
 
-    private void OnCollisionExit2D(Collision2D col) {
+    void OnCollisionExit2D(Collision2D col) {
         isGrounded = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("bullet") ||
+            other.gameObject.CompareTag("hazard")) {
+            health = health - 1;
+        }
     }
 }
