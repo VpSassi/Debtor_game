@@ -5,12 +5,30 @@ using UnityEngine;
 public class Crosshair_script : MonoBehaviour
 {
     public Camera mainCamera;
+    public float bulletSpeed = 0.5f;
+    private Vector3 latestPos;
 
-    public float bulletSpeed = 0.1f;
+    private Overlord_script overlord;
+
+    void Start() {
+        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
+    }
+    
     void Update()
     {
-        // crosshairs position is the same as mouse location in world
+        MoveCrosshair();
+    }
+
+    Vector3 GetMousePos() {
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mouseWorldPos.x, mouseWorldPos.y, 10f);
+        return mouseWorldPos;
+    }
+
+    void MoveCrosshair() { // move crosshair to mouse position
+        latestPos = new Vector3(GetMousePos().x, GetMousePos().y, 10f);
+
+        if (!overlord.stop) { // TESTING
+            transform.position = latestPos;
+        }
     }
 }

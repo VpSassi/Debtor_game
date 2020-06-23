@@ -98,3 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dima: {fileID: 0}
   mainCamera: {fileID: 4336126645619032785}
+  cameraSizeMin: 7
+  cameraSizeMax: 14
