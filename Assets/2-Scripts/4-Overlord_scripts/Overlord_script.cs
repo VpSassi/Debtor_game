@@ -16,6 +16,10 @@ public class Overlord_script : MonoBehaviour
 
         return Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
+    public Vector3 ol_Vector3ZeroZ(Vector3 vector) {
+      return new Vector3(vector.x, vector.y, 0);
+    }
     
     void Update() {
         

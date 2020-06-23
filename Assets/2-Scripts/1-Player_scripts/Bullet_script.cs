@@ -43,7 +43,7 @@ public class Bullet_script : MonoBehaviour
     }
 
     void SetStartDirection() { // set intitial direction and rotation
-        direction = crosshair.transform.position - transform.position;
+        direction = overlord.ol_Vector3ZeroZ(crosshair.transform.position - transform.position).normalized;
         transform.rotation = overlord.ol_GetLookRotation(crosshair.transform, transform);
     }
 
