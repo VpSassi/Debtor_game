@@ -1,0 +1,12 @@
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\bin\Debug\netcoreapp2.1\HajyGames.deps.json
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\bin\Debug\netcoreapp2.1\HajyGames.dll
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\bin\Debug\netcoreapp2.1\HajyGames.pdb
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\bin\Debug\netcoreapp2.1\UnityEngine.dll
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\bin\Debug\netcoreapp2.1\UnityEngine.xml
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.csprojAssemblyReference.cache
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.csproj.CoreCompileInputs.cache
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.AssemblyInfoInputs.cache
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.AssemblyInfo.cs
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.csproj.CopyComplete
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.dll
+C:\unity_projektit\Dima_game\HajyGames\HajyGames\obj\Debug\netcoreapp2.1\HajyGames.pdb

@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Head_rotation_script : MonoBehaviour
 {
     private Transform crosshair;
-    private Overlord_script overlord;
     
     void Start()
     {
         crosshair = GameObject.Find("Crosshair").GetComponent<Transform>();
-        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
     }
 
     
@@ -20,7 +19,7 @@ public class Head_rotation_script : MonoBehaviour
     }
 
     void LookAtTarget() { // rotate head to look at crosshair
-        Quaternion lookRot = overlord.ol_GetLookRotation(crosshair, transform);
+        Quaternion lookRot = GenericFunctions.GetLookRotation(crosshair, transform);
         transform.rotation = lookRot;
         
         Vector3 adjustedRot = transform.rotation.eulerAngles;

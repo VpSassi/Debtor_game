@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Muzzle_script : MonoBehaviour
 {
@@ -13,16 +14,12 @@ public class Muzzle_script : MonoBehaviour
     private Vector3 leftPos = new Vector3(-0.73f, -0.35f, 0f);
     private Vector3 rightPos = new Vector3(0.673f, 0.282f, 0f);
 
-    private Overlord_script overlord;
-
     void Start()
     {
         target = GameObject.Find("Arm_R_Target").GetComponent<Transform>();
         crosshair = GameObject.Find("Crosshair").GetComponent<Transform>();
         parent = GameObject.Find("Muzzle_parent").GetComponent<Transform>();
         Dima = GameObject.Find("Dima").GetComponent<Transform>();
-
-        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
     }
 
     void Update()
@@ -37,6 +34,6 @@ public class Muzzle_script : MonoBehaviour
 
     void LookAtCrosshair() {
         parent.position = target.position;
-        parent.rotation =  overlord.ol_GetLookRotation(crosshair, transform);
+        parent.rotation =  GenericFunctions.GetLookRotation(crosshair, transform);
     }
 }

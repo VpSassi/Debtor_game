@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Dima_script : MonoBehaviour
 {
@@ -15,14 +16,10 @@ public class Dima_script : MonoBehaviour
     public Transform bulletPrefab;
     public int health = 1;
 
-    private Overlord_script overlord;
-
     void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
         MainCamera = GameObject.Find("Camera").GetComponent<Camera_script>();
         muzzle = GameObject.Find("Muzzle");
-
-        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
     }
 
     void Update()
@@ -68,7 +65,7 @@ public class Dima_script : MonoBehaviour
     }
 
     void RotateSprite(float spriteRotation) { // Sprite rotation towards aiming direction
-        if (!overlord.stop) { // TESTING
+        if (GlobalVariables.stop) { // TESTING
             transform.localScale = new Vector3(Mathf.Floor(spriteRotation) , 1, 1);
         }
     }
