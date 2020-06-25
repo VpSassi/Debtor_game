@@ -7,7 +7,6 @@ public class Muzzle_script : MonoBehaviour
     private Transform target;
     private Transform crosshair;
     private Transform parent;
-
     private Transform Dima;
     
     private Vector3 leftPos = new Vector3(-0.73f, -0.35f, 0f);

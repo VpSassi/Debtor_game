@@ -33,7 +33,7 @@ public class Bullet_script : MonoBehaviour
     }
 
     void MoveBullet() { // go bullet, go!
-        transform.position += direction * Time.deltaTime * crosshairScript.bulletSpeed;
+        transform.position += direction.normalized * Time.deltaTime * crosshairScript.bulletSpeed;
     }
 
     void RotateBullet(Collision2D col) { // rotate bullet based on new reflect direction

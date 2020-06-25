@@ -14,7 +14,7 @@ public class Dima_script : MonoBehaviour
     private GameObject muzzle;
     public Transform bulletPrefab;
     public int health = 1;
-
+    public float spriteRotation = 1;
     private Overlord_script overlord;
 
     void Awake() {
@@ -31,7 +31,7 @@ public class Dima_script : MonoBehaviour
             DimaMovement();
         // }
         
-        float spriteRotation = Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x ? 1 : -1;
+        spriteRotation = Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x ? 1 : -1;
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
             DimaJump();
