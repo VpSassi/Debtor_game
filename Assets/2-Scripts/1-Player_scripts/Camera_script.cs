@@ -1,27 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Camera_script : MonoBehaviour
 {
-    public GameObject Dima;
+    private GameObject Dima;
     private GameObject crosshair;
-    public Camera mainCamera;
     private Vector3 cameraPos;
     public float cameraSizeMin = 7f;
     public float cameraSizeMax = 14f;
-    private Overlord_script overlord;
 
     void Start()
     {
         crosshair = GameObject.Find("Crosshair");
-        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
+        Dima = GameObject.Find("Dima");
     }
 
     void Update()
     {
         float heightOffset = 6f;
-        float distance = overlord.ol_GetDistance(Dima, crosshair);
+        float distance = GenericFunctions.GetDistance(Dima, crosshair);
 
         transform.position = NewCameraPos(heightOffset);
         
@@ -32,10 +31,11 @@ public class Camera_script : MonoBehaviour
 
     void ZoomCamera(float distance) { // zooms camera based on crosshair placement
         // TODO: smoother camera size scaling?
-        mainCamera.orthographicSize = distance;
+        GetComponent<Camera>().orthographicSize = distance;
     }
 
     Vector3 NewCameraPos(float heightOffset) { // returns new camera position
+        // TODO: smoother player follow (now it jitters a little)
         return new Vector3(Dima.transform.position.x, Dima.transform.position.y + heightOffset, -10f);
     }
 }

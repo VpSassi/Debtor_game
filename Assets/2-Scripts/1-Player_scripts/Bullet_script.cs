@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Bullet_script : MonoBehaviour
 {
@@ -11,11 +12,8 @@ public class Bullet_script : MonoBehaviour
     private float angle;
     private Bullet_script parent;
 
-    private Overlord_script overlord;
-
     void Start()
     {
-        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
         crosshair = GameObject.Find("Crosshair");
         Dima = GameObject.Find("Dima");
         crosshairScript = crosshair.GetComponent<Crosshair_script>();
@@ -43,8 +41,8 @@ public class Bullet_script : MonoBehaviour
     }
 
     void SetStartDirection() { // set intitial direction and rotation
-        direction = crosshair.transform.position - transform.position;
-        transform.rotation = overlord.ol_GetLookRotation(crosshair.transform, transform);
+        direction = GenericFunctions.Vector3ZeroZ(crosshair.transform.position - transform.position).normalized;
+        transform.rotation = GenericFunctions.GetLookRotation(crosshair.transform, transform);
     }
 
     Vector3 NewReflectDir(Collision2D col) { // return new reflected direction

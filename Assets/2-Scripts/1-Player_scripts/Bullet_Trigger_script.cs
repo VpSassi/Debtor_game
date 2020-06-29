@@ -22,7 +22,8 @@ public class Bullet_Trigger_script : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player") && lifeTime > 1) {
-            DamagePlayer();
+            // DamagePlayer();
+            dimaScript.health = dimaScript.health - 1;
             Destroy(parent);
         }
     }

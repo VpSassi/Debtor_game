@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Crosshair_script : MonoBehaviour
 {
@@ -8,10 +9,8 @@ public class Crosshair_script : MonoBehaviour
     public float bulletSpeed = 0.5f;
     private Vector3 latestPos;
 
-    private Overlord_script overlord;
-
     void Start() {
-        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
+        
     }
     
     void Update()
@@ -27,7 +26,7 @@ public class Crosshair_script : MonoBehaviour
     void MoveCrosshair() { // move crosshair to mouse position
         latestPos = new Vector3(GetMousePos().x, GetMousePos().y, 10f);
 
-        if (!overlord.stop) { // TESTING
+        if (!GlobalVariables.stop) { // TESTING
             transform.position = latestPos;
         }
     }
