@@ -8,6 +8,7 @@ public class Arm_root_rotation_script : MonoBehaviour
     private Vector3 rot;
     private Transform crosshair;
     private Dima_script dimaScript;
+    
     void Start()
     {
         crosshair = GameObject.Find("Crosshair").GetComponent<Transform>();
@@ -16,7 +17,9 @@ public class Arm_root_rotation_script : MonoBehaviour
 
     void Update()
     {
-        RotationAdjust();
+        if (dimaScript.health > 0) {
+            RotationAdjust();
+        }
     }
 
     void RotationAdjust() {
