@@ -9,14 +9,16 @@ public class Crosshair_script : MonoBehaviour
     public float bulletSpeed = 0.5f;
     private Vector3 latestPos;
     private Dima_script dimaScript;
+    private Overlord_script overlord;
 
     void Start() {
         dimaScript = GameObject.Find("Dima").GetComponent<Dima_script>();
+        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
     }
     
     void Update()
     {
-        if (dimaScript.health > 0) {
+        if (!overlord.playerDead && !overlord.stageWin) {
             MoveCrosshair();
         }
     }

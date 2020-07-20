@@ -40,7 +40,7 @@ public class Dima_script : MonoBehaviour
 
     void Awake() {
         rigidBody = GetComponent<Rigidbody2D>();
-        MainCamera = GameObject.Find("Camera").GetComponent<Camera_script>();
+        MainCamera = GameObject.Find("Game_Camera").GetComponent<Camera_script>();
         muzzle_R = GameObject.Find("Muzzle_R");
         muzzle_L = GameObject.Find("Muzzle_L");
         Dima_Animator = GetComponent<Animator>();
@@ -70,7 +70,7 @@ public class Dima_script : MonoBehaviour
             DisableAnimThings();
             DimaDeath();
         }
-        if (!overlord.playerDead) {
+        if (!overlord.playerDead && !overlord.stageWin) {
             DimaMovement();
             ActionButtonFunc();
             ShootTimerFunc();

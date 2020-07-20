@@ -21,6 +21,8 @@ public class Overlord_script : MonoBehaviour
     public float seconds = 0;
     public float minutes = 0;
     public int timerScore = 1000;
+    public bool alarmOn = false;
+    
 
     void Awake() {
         currentLevel = SceneManager.GetActiveScene().name;
@@ -65,7 +67,7 @@ public class Overlord_script : MonoBehaviour
         }
     }
 
-    void Timer() { // time rthat counts up when scene is loaded
+    void Timer() { // timer that counts up when scene is loaded
         milliseconds += 1000 * Time.deltaTime;
 
         if (milliseconds >= 1000) {
@@ -88,5 +90,13 @@ public class Overlord_script : MonoBehaviour
         win_helper_text.text =  "TIME - " + minutes + ":" + seconds + ":" + Mathf.Floor(milliseconds) + "\n" + // TODO: formatting (00:00:00)
                                 "BULLETS - " + currentBullets + " / " + bulletsTotal + "\n \n" +
                                 "SCORE - " + finalScore;
+    }
+
+    public void ReturnToMainMenu() { // go back to main menu
+        SceneManager.LoadScene("Main_menu");
+    }
+
+    public void NextLevel() { // load the next scene in order
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
