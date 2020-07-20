@@ -32,7 +32,6 @@ public class Teleporter_End_script : MonoBehaviour
 
     void CheckIfWin() {
         if (playerOnPlatform && dimaScript.pressedActionButton) {
-            // TODO: proper map ending features
             overlord.stageWin = true;
         }
     }
