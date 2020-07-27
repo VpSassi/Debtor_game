@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
+using HajyGames;
 
 public class Level_select_script : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Level_select_script : MonoBehaviour
     public AudioClip[] clips;
     public bool playLevel = false;
     private float levelChangeTimer = 0;
+    private LevelsData levelsData;
 
     void Awake()
     {
@@ -38,9 +40,10 @@ public class Level_select_script : MonoBehaviour
     }
 
     void InitializeLevelData() {
-        string json = File.ReadAllText("Assets/2-Scripts/5-Menu_scripts/Level_data.json");
 
-        LevelsData levelsData = JsonUtility.FromJson<LevelsData>(json);
+        string json = File.ReadAllText(Application.streamingAssetsPath + "/Level_data.json");
+
+        levelsData = JsonUtility.FromJson<LevelsData>(json);
         LevelData[] levelData = levelsData.levelData;
 
         int i = 0;
@@ -58,19 +61,22 @@ public class Level_select_script : MonoBehaviour
             foundLevels++;
         }
 
-        selectedLevel = levels[0];
+        selectedLevel = levels[levelsData.latestLevel];
 
         UpdateLevelSelection();
     }
 
     void UpdateLevelInfo() { // updates selected level displayed info
         Sprite newImage;
+        Texture2D newTexture = new Texture2D(2, 2);
 
-        if (!File.Exists("Assets/Resources/" + selectedLevel.imageUrl + ".png")) {
-            newImage = Resources.Load<Sprite>("1-Level_pictures/T");
+        if (!File.Exists(Application.streamingAssetsPath + "/" + selectedLevel.imageUrl + ".png")) {
+            newTexture.LoadImage(File.ReadAllBytes(Application.streamingAssetsPath + "/1-Level_pictures/T.png"));
         } else {
-            newImage = Resources.Load<Sprite>(selectedLevel.imageUrl);
+            newTexture.LoadImage(File.ReadAllBytes(Application.streamingAssetsPath + "/" + selectedLevel.imageUrl + ".png"));
         }
+
+        newImage = Sprite.Create(newTexture, new Rect(0.0f, 0.0f, newTexture.width, newTexture.height), new Vector2(0, 0), 100.0f);
 
         oldSelectedLevel = selectedLevel;
         levelName.text = "LEVEL " + selectedLevel.name;
@@ -93,13 +99,17 @@ public class Level_select_script : MonoBehaviour
 
         foreach (LevelData item in levels) {
             if (item?.name != "") {
-            print(item.index); // KILL
             GameObject newLevelButton = Instantiate(levelButton) as GameObject;
             Level_object_script newLevelButtonScript = newLevelButton.GetComponent<Level_object_script>();
 
             newLevelButton.transform.parent = levelSelection.transform;
             newLevelButton.transform.localPosition = new Vector3(0f, topMargin + (levelSelectionRectTransform.sizeDelta.y / 2) - 25, 0f);
             newLevelButtonScript.levelData = item;
+
+            /*
+            RectTransform rt = newLevelButton.GetComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(120, 20);
+            */
 
             topMargin = topMargin - 25;
             }
@@ -108,6 +118,11 @@ public class Level_select_script : MonoBehaviour
 
     public void PlayButtonPress() { // extra function for the play button
         playLevel = true;
+
+        LevelsData newLevelsData = new LevelsData();
+        newLevelsData.levelData = levelsData.levelData;
+        newLevelsData.latestLevel = selectedLevel.index;
+        File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
 
         levelSelectAudio.clip = clips[0];
         levelSelectAudio.Play();
@@ -125,12 +140,14 @@ public class Level_select_script : MonoBehaviour
         }
     }
 
-    // !!! REMOVE FROM FINAL BUILD !!!
+    // !!! REMOVE FROM FINAL BUILD !!! vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv ******
     public void CalibrateLevelsData() { // calibrate levels scenes wit hthe JSON, so that it doesnt need to be done manually
         DirectoryInfo dir = new DirectoryInfo("Assets/1-Scenes/2-Map_scenes");
         FileInfo[] info = dir.GetFiles("*.unity");
 
         LevelData[] newLevelData = new LevelData[info.Length];
+        Settings newSettings = new Settings();
+        
         int i = 0;
         
         foreach (FileInfo file in info) {
@@ -150,18 +167,22 @@ public class Level_select_script : MonoBehaviour
 
         LevelsData newLevelsData = new LevelsData();
         newLevelsData.levelData = newLevelData;
+        newLevelsData.latestLevel = 0;
+        newLevelsData.settings = newSettings;
 
-        File.WriteAllText("Assets/2-Scripts/5-Menu_scripts/Level_data.json", JsonUtility.ToJson(newLevelsData));
+        File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData,true));
 
         // TODO: add the scenes to be built in code as well so you don't have to do it manually
 
         SceneManager.LoadScene("Main_menu");
     }
-    // !!! REMOVE FROM FINAL BUILD !!!
+    // !!! REMOVE FROM FINAL BUILD !!! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ******
 
     [System.Serializable]
     public class LevelsData {
         public LevelData[] levelData;
+        public int latestLevel;
+        public Settings settings;
     }
     
     [System.Serializable]
@@ -172,5 +193,11 @@ public class Level_select_script : MonoBehaviour
         public int attempts;
         public int topScore;
         public string imageUrl;
+    }
+
+    [System.Serializable]
+    public class Settings {
+
+        // TODO: settings
     }
 }

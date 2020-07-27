@@ -1,0 +1,46 @@
+{
+    "levelData": [
+        {
+            "index": 0,
+            "name": "1",
+            "description": "Boxes",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/1"
+        },
+        {
+            "index": 1,
+            "name": "2",
+            "description": "Security door",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/2"
+        },
+        {
+            "index": 2,
+            "name": "3",
+            "description": "Death lazors",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/3"
+        },
+        {
+            "index": 3,
+            "name": "4",
+            "description": "Alarm lazors",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/4"
+        },
+        {
+            "index": 4,
+            "name": "5",
+            "description": "Sentry guns",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/5"
+        }
+    ],
+    "latestLevel": 2,
+    "settings": {}
+}

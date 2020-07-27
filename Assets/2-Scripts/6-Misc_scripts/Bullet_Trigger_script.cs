@@ -12,6 +12,7 @@ public class Bullet_Trigger_script : MonoBehaviour
     private AudioSource hitSound;
     private Overlord_script overlord;
     public AudioClip[] clips;
+    private bool damageGiven = false;
 
     void Start() {
         parent = transform.parent.gameObject;
@@ -29,25 +30,42 @@ public class Bullet_Trigger_script : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col) {
 
         if (col.gameObject.CompareTag("Player") && lifeTime > 1 && !overlord.playerDead && !overlord.stageWin) {
-            DamagePlayer();
-            AdjustVolume();
-            PlaySound(0);
-            Destroy(parent, 0.3f);
+            if (!damageGiven) {
+                DamagePlayer();
+                AdjustVolume();
+                PlaySound(0);
+                parent.transform.Find("Bullet").gameObject.SetActive(false);
+                parent.GetComponent<Bullet_script>().finalHit = true;
+                Destroy(parent, 0.3f);
+            }
         }
 
+        /*
         if (col.gameObject.CompareTag("button")) {
-            // PlaySound(2);
-           // Kill or let bounce?
+                // Kill or let bounce?
+            }   
         }
+        */
 
         if (col.gameObject.CompareTag("box")) {
+            
             PlaySound(1);
             // Kill or let bounce?
+        }
+
+        if (col.gameObject.CompareTag("sentry_gun")) {
+            if (!damageGiven) {
+                DamageSentryGun(col);
+                parent.transform.Find("Bullet").gameObject.SetActive(false);
+                parent.GetComponent<Bullet_script>().finalHit = true;
+                Destroy(parent, 0.3f);
+            }
         }
     }
 
     void DamagePlayer() {
-        dimaScript.health = dimaScript.health - 1;
+        dimaScript.health--;
+        damageGiven = true;
     }
 
     void PlaySound(int clipNumber) {
@@ -59,5 +77,15 @@ public class Bullet_Trigger_script : MonoBehaviour
         float distance = GenericFunctions.GetDistance(gameObject, Dima);
         distance = distance > 100 ? 100 : distance;
         hitSound.volume = 1f - (distance / 40);
+    }
+
+    void DamageSentryGun(Collider2D col) {
+        Sentry_gun_script sentryGunScript = col.gameObject.GetComponent<Sentry_gun_script>();
+
+        PlaySound(2);
+
+        sentryGunScript.health--;
+        sentryGunScript.damaged = true;
+        damageGiven = true;
     }
 }

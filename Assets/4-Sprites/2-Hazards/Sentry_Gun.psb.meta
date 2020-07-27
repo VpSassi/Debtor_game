@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf32e9100c5fcaa45853d82d2f0abcc0
+guid: f9dbc4df101493b42ae9320b94dc6aad
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -87,18 +87,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Open_T
+  - name: Lights
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 45
+      x: 341
       y: 4
-      width: 82
-      height: 97
-    spriteID: b50dfc4c56bb6df4e8291a4a55cd8ab2
+      width: 9
+      height: 149
+    spriteID: cf423dbc7efb58841b1bd7b7d628943c
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -108,107 +108,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -16, y: -331}
-  - name: Open_B
+    uvTransform: {x: 85, y: -85}
+  - name: Gun_Armor
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 45
-      y: 341
-      width: 20
-      height: 20
-    spriteID: 2df440fcc7a16d24db94c0e074a1a7e2
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -47, y: 315}
-  - name: Closed_T
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 45
-      y: 109
-      width: 82
-      height: 97
-    spriteID: 4d95b11f1c93b1042b6459efcedc0f0a
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -16, y: -226}
-  - name: Closed_B
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 45
-      y: 369
-      width: 20
-      height: 20
-    spriteID: d34a8960bb8bfd140936d8706c8d09d7
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -47, y: 343}
-  - name: Top
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 45
-      y: 214
-      width: 58
-      height: 119
-    spriteID: dce3cd5e78bd4644f808d7056634ace3
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -28, y: -105}
-  - name: Bottom
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 135
+      x: 212
       y: 4
-      width: 170
-      height: 37
-    spriteID: f0004f106d9f30a4faf85c0bb3425ff9
+      width: 121
+      height: 295
+    spriteID: b8f9f239cb10d554ba58aa7ee4017f8f
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -218,8 +130,96 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 118, y: -16}
-  - name: Door
+    uvTransform: {x: 63, y: -12}
+  - name: Gun_Cover_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 99
+      y: 411
+      width: 26
+      height: 48
+    spriteID: 1149ec5e8a7594245983ece5baa6f9aa
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -165, y: 248}
+  - name: Gun_Cover_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 133
+      y: 411
+      width: 26
+      height: 48
+    spriteID: 02908a7e6726b074c810077d6f1d652e
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -131, y: 295}
+  - name: Gun
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 411
+      width: 87
+      height: 61
+    spriteID: dd633f7e70cb9d24a854c08bc6cb2555
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -190, y: 278}
+  - name: Base
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 212
+      width: 194
+      height: 191
+    spriteID: c3267f3c64421cd428eb8245ddc00883
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -30, y: -17}
+  - name: Ball
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -228,9 +228,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 33
-      height: 309
-    spriteID: 117d8eed631e767429b4d29bc8074027
+      width: 200
+      height: 200
+    spriteID: 2ac5f7a41f1262e45929b8291f4ad590
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -240,7 +240,29 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -81, y: -26}
+    uvTransform: {x: -27, y: -60}
+  - name: Barrel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 212
+      y: 307
+      width: 231
+      height: 27
+    spriteID: 3e4aec378ad0a5f4d97d329f6c4446d6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 156, y: 157}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -248,7 +270,7 @@ ScriptedImporter:
   importHiddenLayers: 0
   importedTextureWidth: 512
   importedTextureHeight: 512
-  documentSize: {x: 202, y: 448}
+  documentSize: {x: 331, y: 445}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
@@ -260,62 +282,69 @@ ScriptedImporter:
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Open_T
-    spriteName: Open_T
+  - name: Lights
+    spriteName: Lights
     isGroup: 0
     parentIndex: -1
-    spriteID: b50dfc4c56bb6df4e8291a4a55cd8ab2
-    layerID: 46
-    mosaicPosition: {x: 45, y: 4}
-  - name: Open_B
-    spriteName: Open_B
+    spriteID: cf423dbc7efb58841b1bd7b7d628943c
+    layerID: 28
+    mosaicPosition: {x: 341, y: 4}
+  - name: Gun_Armor
+    spriteName: Gun_Armor
     isGroup: 0
     parentIndex: -1
-    spriteID: 2df440fcc7a16d24db94c0e074a1a7e2
-    layerID: 24
-    mosaicPosition: {x: 45, y: 341}
-  - name: Closed_T
-    spriteName: Closed_T
+    spriteID: b8f9f239cb10d554ba58aa7ee4017f8f
+    layerID: 61
+    mosaicPosition: {x: 212, y: 4}
+  - name: Gun_Cover_1
+    spriteName: Gun_Cover_1
     isGroup: 0
     parentIndex: -1
-    spriteID: 4d95b11f1c93b1042b6459efcedc0f0a
-    layerID: 47
-    mosaicPosition: {x: 45, y: 109}
-  - name: Closed_B
-    spriteName: Closed_B
+    spriteID: 1149ec5e8a7594245983ece5baa6f9aa
+    layerID: 31
+    mosaicPosition: {x: 99, y: 411}
+  - name: Gun_Cover_2
+    spriteName: Gun_Cover_2
     isGroup: 0
     parentIndex: -1
-    spriteID: d34a8960bb8bfd140936d8706c8d09d7
-    layerID: 23
-    mosaicPosition: {x: 45, y: 369}
-  - name: Top
-    spriteName: Top
+    spriteID: 02908a7e6726b074c810077d6f1d652e
+    layerID: 32
+    mosaicPosition: {x: 133, y: 411}
+  - name: Gun
+    spriteName: Gun
     isGroup: 0
     parentIndex: -1
-    spriteID: dce3cd5e78bd4644f808d7056634ace3
-    layerID: 26
-    mosaicPosition: {x: 45, y: 214}
-  - name: Bottom
-    spriteName: Bottom
+    spriteID: dd633f7e70cb9d24a854c08bc6cb2555
+    layerID: 37
+    mosaicPosition: {x: 4, y: 411}
+  - name: Base
+    spriteName: Base
     isGroup: 0
     parentIndex: -1
-    spriteID: f0004f106d9f30a4faf85c0bb3425ff9
-    layerID: 20
-    mosaicPosition: {x: 135, y: 4}
-  - name: Door
-    spriteName: Door
+    spriteID: c3267f3c64421cd428eb8245ddc00883
+    layerID: 60
+    mosaicPosition: {x: 4, y: 212}
+  - name: Ball
+    spriteName: Ball
     isGroup: 0
     parentIndex: -1
-    spriteID: 117d8eed631e767429b4d29bc8074027
-    layerID: 45
+    spriteID: 2ac5f7a41f1262e45929b8291f4ad590
+    layerID: 3
     mosaicPosition: {x: 4, y: 4}
+  - name: Barrel
+    spriteName: Barrel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3e4aec378ad0a5f4d97d329f6c4446d6
+    layerID: 44
+    mosaicPosition: {x: 212, y: 307}
   characterData:
     bones: []
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: Security_door Texture
-  prefabAssetName: Security_door Prefab
-  spriteLibAssetName: Security_door Sprite Lib
+  textureAssetName: Sentry_Gun Texture
+  prefabAssetName: Sentry_Gun Prefab
+  spriteLibAssetName: Sentry_Gun Sprite Lib
   secondarySpriteTextures: []

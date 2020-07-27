@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 using HajyGames;
 
 public class Overlord_script : MonoBehaviour
@@ -22,7 +23,9 @@ public class Overlord_script : MonoBehaviour
     public float minutes = 0;
     public int timerScore = 1000;
     public bool alarmOn = false;
-    
+    public int[] timerScoreSteps = new int[5];
+    private string json;
+    private Level_select_script.LevelsData levelsData;
 
     void Awake() {
         currentLevel = SceneManager.GetActiveScene().name;
@@ -31,6 +34,15 @@ public class Overlord_script : MonoBehaviour
 
         bulletsTotal = 30;
         currentBullets = bulletsTotal;
+
+        string json = File.ReadAllText(Application.streamingAssetsPath + "/Level_data.json");
+
+        levelsData = JsonUtility.FromJson<Level_select_script.LevelsData>(json);
+        Level_select_script.LevelData[] levelData = levelsData.levelData;
+
+        Level_select_script.LevelsData newLevelsData = levelsData;
+        newLevelsData.levelData[levelsData.latestLevel].attempts++;
+        File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
     }
 
     void Update() {
@@ -63,6 +75,10 @@ public class Overlord_script : MonoBehaviour
 
     public void Respawn() { // respawn when R key is pressed
         if (Input.GetKeyDown(KeyCode.R) /* && !stageWin */) {
+            Level_select_script.LevelsData newLevelsData = levelsData;
+            newLevelsData.levelData[levelsData.latestLevel].attempts++;
+            File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
+
             SceneManager.LoadScene(currentLevel);
         }
     }
@@ -90,6 +106,10 @@ public class Overlord_script : MonoBehaviour
         win_helper_text.text =  "TIME - " + minutes + ":" + seconds + ":" + Mathf.Floor(milliseconds) + "\n" + // TODO: formatting (00:00:00)
                                 "BULLETS - " + currentBullets + " / " + bulletsTotal + "\n \n" +
                                 "SCORE - " + finalScore;
+        
+        Level_select_script.LevelsData newLevelsData = levelsData;
+        newLevelsData.levelData[levelsData.latestLevel].topScore = finalScore;
+        File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
     }
 
     public void ReturnToMainMenu() { // go back to main menu
@@ -97,6 +117,10 @@ public class Overlord_script : MonoBehaviour
     }
 
     public void NextLevel() { // load the next scene in order
+        Level_select_script.LevelsData newLevelsData = levelsData;
+        newLevelsData.latestLevel++;
+        File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HajyGames;
 
 public class Button_script : MonoBehaviour
 {
     public bool pressed = false;
-    public Animator buttonAnim;
+    private Animator buttonAnim;
+    private GameObject Dima;
     private Dima_script dimaScript;
     public float timer = 0;
+    private AudioSource buttonAudio;
+
     void Start()
     {
         buttonAnim = GetComponent<Animator>();
-        dimaScript = GameObject.Find("Dima").GetComponent<Dima_script>();
+        Dima = GameObject.Find("Dima");
+        dimaScript = Dima.GetComponent<Dima_script>();
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     void Update() {
@@ -31,6 +37,14 @@ public class Button_script : MonoBehaviour
             pressed = !pressed;
             buttonAnim.SetBool("pressed", pressed);
             timer = 3;
+            buttonAudio.volume = AdjustedVolume();
+            buttonAudio.Play();
         }
+    }
+
+    float AdjustedVolume() {
+        float distance = GenericFunctions.GetDistance(gameObject, Dima);
+        distance = distance > 100 ? 100 : distance;
+        return 1f - (distance / 50);
     }
 }

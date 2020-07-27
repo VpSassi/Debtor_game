@@ -275,13 +275,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134812683, guid: c6a62458d0f79e3488a20c31445bd793, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 462027264, guid: c6a62458d0f79e3488a20c31445bd793, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlayButtonPress
       objectReference: {fileID: 0}
     - target: {fileID: 737977399, guid: c6a62458d0f79e3488a20c31445bd793, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 69375273972553791, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 69375273972553791, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4897550039906938597, guid: c6a62458d0f79e3488a20c31445bd793,
         type: 3}
