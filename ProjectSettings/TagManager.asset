@@ -9,6 +9,7 @@ TagManager:
   - corpse
   - button
   - box
+  - sentry_gun
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Bullet
   - Hazard
   - Corpse
-  - 
+  - Ignore_others
   - 
   - 
   - 

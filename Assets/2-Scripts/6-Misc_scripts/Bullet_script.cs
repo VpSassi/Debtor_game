@@ -17,6 +17,7 @@ public class Bullet_script : MonoBehaviour
     public GameObject sparks;
     private AudioSource hitSound;
     public AudioClip[] clips;
+    public bool finalHit = false;
 
     void Start()
     {
@@ -31,13 +32,15 @@ public class Bullet_script : MonoBehaviour
 
     void Update()
     {
-        MoveBullet();
+        if (!finalHit) {
+            MoveBullet();
 
-        timer += Time.deltaTime;
-        
-        if (timer >= 0.05) {
-            SpawnMotionLine();
-            timer = 0;
+            timer += Time.deltaTime;
+            
+            if (timer >= 0.05) {
+                SpawnMotionLine();
+                timer = 0;
+            }
         }
     }
 

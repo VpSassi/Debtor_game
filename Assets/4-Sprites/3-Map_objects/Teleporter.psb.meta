@@ -87,72 +87,6 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Arm_R
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 179
-      width: 127
-      height: 1087
-    spriteID: 3091134fbd0201d43b66fbb881cae12d
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -1069, y: -98}
-  - name: Arm_L
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 139
-      y: 179
-      width: 127
-      height: 1087
-    spriteID: 22d28663d1466224bb1f9bc2913e01a1
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -21, y: -98}
-  - name: Platform
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 1113
-      height: 167
-    spriteID: ae70b16a1f1c1144da0d83d6e5e0a852
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -111, y: -14}
   - name: Light_L_On
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -241,6 +175,72 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -156, y: 1358}
+  - name: Arm_R
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 179
+      width: 127
+      height: 1087
+    spriteID: f1a0d2db373f3f0439e1ca7ac649f0c4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1069, y: -98}
+  - name: Arm_L
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 139
+      y: 179
+      width: 127
+      height: 1087
+    spriteID: 7fa54c1c0c312a6489009301913b14b6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -21, y: -98}
+  - name: Platform
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1113
+      height: 167
+    spriteID: bdb22b423f985c04ea16f1cfe007a7d8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -111, y: -14}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
@@ -264,22 +264,22 @@ ScriptedImporter:
     spriteName: Arm_R
     isGroup: 0
     parentIndex: -1
-    spriteID: 3091134fbd0201d43b66fbb881cae12d
-    layerID: 38
+    spriteID: f1a0d2db373f3f0439e1ca7ac649f0c4
+    layerID: 42
     mosaicPosition: {x: 4, y: 179}
   - name: Arm_L
     spriteName: Arm_L
     isGroup: 0
     parentIndex: -1
-    spriteID: 22d28663d1466224bb1f9bc2913e01a1
-    layerID: 37
+    spriteID: 7fa54c1c0c312a6489009301913b14b6
+    layerID: 41
     mosaicPosition: {x: 139, y: 179}
   - name: Platform
     spriteName: Platform
     isGroup: 0
     parentIndex: -1
-    spriteID: ae70b16a1f1c1144da0d83d6e5e0a852
-    layerID: 28
+    spriteID: bdb22b423f985c04ea16f1cfe007a7d8
+    layerID: 39
     mosaicPosition: {x: 4, y: 4}
   - name: Light_L_On
     spriteName: Light_L_On

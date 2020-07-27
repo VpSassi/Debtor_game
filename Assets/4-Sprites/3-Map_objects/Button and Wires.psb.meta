@@ -131,7 +131,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 73, y: -310}
-  - name: Wire_connector
+  - name: Wire_Connector
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -142,7 +142,7 @@ ScriptedImporter:
       y: 146
       width: 74
       height: 74
-    spriteID: 6f85c911579fbc742befdbfaddf4f841
+    spriteID: 374f9134e724b1a429f3b7b8c4dd7167
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -164,7 +164,7 @@ ScriptedImporter:
       y: 307
       width: 441
       height: 13
-    spriteID: c7a5463c2240a734db8a2a608e8d9858
+    spriteID: f430c323c1a9f61419a7038d8a36bbb6
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -186,7 +186,7 @@ ScriptedImporter:
       y: 4
       width: 441
       height: 134
-    spriteID: 6c744f74fad082b449e3559710c23dd9
+    spriteID: 37bf90d23ebc3fb4a829794265d0a6ba
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -208,7 +208,7 @@ ScriptedImporter:
       y: 146
       width: 359
       height: 153
-    spriteID: fc4144a629f07d7448d1d239c2288898
+    spriteID: 479edea1a46a9cb4c9e65d8e8f0d81fa
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -252,33 +252,33 @@ ScriptedImporter:
     spriteID: a12c3c747993ab54a966eb5424dc9121
     layerID: 11
     mosaicPosition: {x: 453, y: 4}
-  - name: Wire_connector
-    spriteName: Wire_connector
+  - name: Wire_Connector
+    spriteName: Wire_Connector
     isGroup: 0
     parentIndex: -1
-    spriteID: 6f85c911579fbc742befdbfaddf4f841
-    layerID: 20
+    spriteID: 374f9134e724b1a429f3b7b8c4dd7167
+    layerID: 54
     mosaicPosition: {x: 371, y: 146}
   - name: Wire
     spriteName: Wire
     isGroup: 0
     parentIndex: -1
-    spriteID: c7a5463c2240a734db8a2a608e8d9858
-    layerID: 9
+    spriteID: f430c323c1a9f61419a7038d8a36bbb6
+    layerID: 55
     mosaicPosition: {x: 4, y: 307}
   - name: Base
     spriteName: Base
     isGroup: 0
     parentIndex: -1
-    spriteID: 6c744f74fad082b449e3559710c23dd9
-    layerID: 49
+    spriteID: 37bf90d23ebc3fb4a829794265d0a6ba
+    layerID: 52
     mosaicPosition: {x: 4, y: 4}
   - name: Button
     spriteName: Button
     isGroup: 0
     parentIndex: -1
-    spriteID: fc4144a629f07d7448d1d239c2288898
-    layerID: 4
+    spriteID: 479edea1a46a9cb4c9e65d8e8f0d81fa
+    layerID: 53
     mosaicPosition: {x: 4, y: 146}
   characterData:
     bones: []

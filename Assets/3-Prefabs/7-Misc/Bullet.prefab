@@ -46,8 +46,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17678, y: -0.0026476001}
-  m_Size: {x: 0.39892614, y: 0.3837073}
+  m_Offset: {x: 0.10870583, y: 0.0002697279}
+  m_Size: {x: 0.5817676, y: 0.4673581}
   m_Direction: 1
 --- !u!114 &5067286466008008192
 MonoBehaviour:
@@ -64,7 +64,7 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 3908c63872a66be45bf8ff328fe9e87b, type: 3}
   - {fileID: 8300000, guid: 649d86d37b8eef84e9740e6832874b2e, type: 3}
-  - {fileID: 8300000, guid: 649d86d37b8eef84e9740e6832874b2e, type: 3}
+  - {fileID: 8300000, guid: 4346dfdbabd92ad40bc2e812e591d178, type: 3}
 --- !u!82 &6992013635708789655
 AudioSource:
   m_ObjectHideFlags: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c564c0eca212269439aa2c70b2ddd445, type: 3}
   - {fileID: 8300000, guid: 4947bfc9d01db95408bffd24a87f5507, type: 3}
   - {fileID: 8300000, guid: 3d304420d47353547b244a965148380b, type: 3}
+  finalHit: 0
 --- !u!70 &-7137777821108151134
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

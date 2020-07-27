@@ -24,9 +24,9 @@ public class Arm_root_rotation_script : MonoBehaviour
 
     void RotationAdjust() {
         Quaternion newRot = GenericFunctions.GetLookRotation(transform, crosshair);
-        Vector3 adjusterRot = newRot.eulerAngles;
-        adjusterRot = dimaScript.spriteRotation == 1 ? new Vector3(0, 0, adjusterRot.z + 160f) : new Vector3(0, 0, adjusterRot.z + 20f);
+        Vector3 adjustedRot = newRot.eulerAngles;
+        adjustedRot = dimaScript.spriteRotation == 1 ? new Vector3(0, 0, adjustedRot.z + 160f) : new Vector3(0, 0, adjustedRot.z + 20f);
 
-        transform.rotation = Quaternion.Euler(adjusterRot);
+        transform.rotation = Quaternion.Euler(adjustedRot);
     }
 }

@@ -13,6 +13,9 @@ public class Security_door_script : MonoBehaviour
     private bool pressed = false;
     private AudioSource doorAudio;
     public AudioClip[] doorClips;
+    private Overlord_script overlord;
+    private bool locked = false;
+    public bool dependentOnAlarm = true;
 
     void Start()
     {
@@ -22,6 +25,7 @@ public class Security_door_script : MonoBehaviour
         closed_T = transform.Find("Closed_T").gameObject;
         closed_B = transform.Find("Closed_B").gameObject;
         doorAudio = GetComponent<AudioSource>();
+        overlord = GameObject.Find("OVERLORD").GetComponent<Overlord_script>();
 
         open_T.SetActive(false);
         open_B.SetActive(false);
@@ -31,12 +35,18 @@ public class Security_door_script : MonoBehaviour
 
     void Update()
     {
-        if (pressed != button.pressed) {
-            if (button.pressed) {
-                DoorOpen();
-            } else {
-                DoorClose();
+        bool alarmBool = dependentOnAlarm ? overlord.alarmOn : false;
+        if (!alarmBool) {
+            if (pressed != button.pressed) {
+                if (button.pressed) {
+                    DoorOpen();
+                } else {
+                    DoorClose();
+                }
             }
+        } else if (alarmBool && !locked) {
+            DoorClose();
+            locked = true;
         }
     }
 
