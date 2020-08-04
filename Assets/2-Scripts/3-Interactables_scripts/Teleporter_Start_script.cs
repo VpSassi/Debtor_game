@@ -8,6 +8,8 @@ public class Teleporter_Start_script : MonoBehaviour
     private Dima_script dimaScript;
     private Transform spawn;
     private Overlord_script overlord;
+    private float effetcTimer = 5;
+
     void Awake()
     {
         Dima = GameObject.Find("Dima");

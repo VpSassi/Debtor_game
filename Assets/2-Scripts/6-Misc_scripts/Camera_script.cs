@@ -26,10 +26,11 @@ public class Camera_script : MonoBehaviour
             float distance = GenericFunctions.GetDistance(Dima, crosshair);
 
             transform.position = NewCameraPos(heightOffset);
-            
+            /*
             if (distance > cameraSizeMin && distance < cameraSizeMax) {
                 ZoomCamera(distance);
             }
+            */
         }
     }
 

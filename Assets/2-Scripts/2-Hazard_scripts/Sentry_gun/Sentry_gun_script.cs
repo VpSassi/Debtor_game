@@ -12,7 +12,7 @@ public class Sentry_gun_script : MonoBehaviour
     private bool active = false;
     public bool spottedPlayer = false;
     public bool shoot = false;
-    public int health = 3;
+    public int health = 5;
     public GameObject turretShot;
     public Transform barrelEnd;
     private AudioSource turretAudio;

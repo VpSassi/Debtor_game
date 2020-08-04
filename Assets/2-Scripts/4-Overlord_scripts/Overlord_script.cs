@@ -26,6 +26,8 @@ public class Overlord_script : MonoBehaviour
     public int[] timerScoreSteps = new int[5];
     private string json;
     private Level_select_script.LevelsData levelsData;
+    public bool nextLevelBtnPressed = false;
+    private GameObject Dima;
 
     void Awake() {
         currentLevel = SceneManager.GetActiveScene().name;
@@ -43,6 +45,8 @@ public class Overlord_script : MonoBehaviour
         Level_select_script.LevelsData newLevelsData = levelsData;
         newLevelsData.levelData[levelsData.latestLevel].attempts++;
         File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
+
+        Dima = GameObject.Find("Dima");
     }
 
     void Update() {
@@ -103,12 +107,15 @@ public class Overlord_script : MonoBehaviour
 
     void WinHelperText() { // set win helper text
         int finalScore = 1000 + timerScore + (currentBullets * 30); // TODO: finalized score calculation
-        win_helper_text.text =  "TIME - " + minutes + ":" + seconds + ":" + Mathf.Floor(milliseconds) + "\n" + // TODO: formatting (00:00:00)
-                                "BULLETS - " + currentBullets + " / " + bulletsTotal + "\n \n" +
-                                "SCORE - " + finalScore;
+        win_helper_text.text =  "TIME" + "\n \n - " + minutes + ":" + seconds + ":" + Mathf.Floor(milliseconds) + "\n \n" + // TODO: formatting (00:00:00)
+                                "BULLETS" + "\n \n - " + currentBullets + " / " + bulletsTotal + "\n \n \n" +
+                                "SCORE" + "\n \n - " + finalScore;
         
         Level_select_script.LevelsData newLevelsData = levelsData;
         newLevelsData.levelData[levelsData.latestLevel].topScore = finalScore;
+        if (levelsData.latestLevel != 4) {
+            newLevelsData.levelData[levelsData.latestLevel + 1].unlocked = true;
+        }
         File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
     }
 
@@ -116,11 +123,17 @@ public class Overlord_script : MonoBehaviour
         SceneManager.LoadScene("Main_menu");
     }
 
-    public void NextLevel() { // load the next scene in order
+    public void NextLevel() { // load the next scene in order after delay
         Level_select_script.LevelsData newLevelsData = levelsData;
         newLevelsData.latestLevel++;
         File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData, true));
+        nextLevelBtnPressed = true;
+        Dima.SetActive(false);
 
+        Invoke("LoadNextLevel", 0.6f);
+    }
+
+    void LoadNextLevel() { // level load func
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

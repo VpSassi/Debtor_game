@@ -45,9 +45,8 @@ public class Bullet_script : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col) {
-        PlayHitSound();
+        BulletHit();
         RotateBullet(col);
-        Instantiate(sparks, transform.position, Quaternion.identity);
     }
 
     void MoveBullet() { // go bullet, go!
@@ -78,6 +77,11 @@ public class Bullet_script : MonoBehaviour
         int number = Random.Range(0, 2);
         hitSound.clip = clips[number];
         hitSound.Play();
+    }
+
+    public void BulletHit() {
+        PlayHitSound();
+        Instantiate(sparks, transform.position, Quaternion.identity);  
     }
 
     Vector3 NewReflectDir(Collision2D col) { // return new reflected direction
