@@ -29,7 +29,7 @@ public class Bullet_Trigger_script : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
 
-        if (col.gameObject.CompareTag("Player") && lifeTime > 1 && !overlord.playerDead && !overlord.stageWin) {
+        if (col.CompareTag("Player") && lifeTime > 1 && !overlord.playerDead && !overlord.stageWin) {
             if (!damageGiven) {
                 DamagePlayer();
                 AdjustVolume();
@@ -40,17 +40,20 @@ public class Bullet_Trigger_script : MonoBehaviour
             }
         }
 
-        /*
         if (col.gameObject.CompareTag("button")) {
-                // Kill or let bounce?
-            }   
+            parent.transform.Find("Bullet").gameObject.SetActive(false);
+            parent.GetComponent<Bullet_script>().finalHit = true;
+            Destroy(parent, 0.3f);
         }
-        */
 
-        if (col.gameObject.CompareTag("box")) {
-            
+        if (col.CompareTag("box")) {    
             PlaySound(1);
             // Kill or let bounce?
+        }
+
+        if (col.CompareTag("glass")) {
+            parent.GetComponent<Bullet_script>().BulletHit();
+            PlaySound(3);
         }
 
         if (col.gameObject.CompareTag("sentry_gun")) {

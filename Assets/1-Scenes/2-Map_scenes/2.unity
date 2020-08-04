@@ -4978,6 +4978,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToMainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3373059350132208608, guid: ccdd1eedd4779c64ea4efaac681290a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1225299917}
+    - target: {fileID: 3373059350132208608, guid: ccdd1eedd4779c64ea4efaac681290a5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3625846685727789744, guid: ccdd1eedd4779c64ea4efaac681290a5,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -5065,7 +5075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1053256633 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4555963786167181356, guid: ccdd1eedd4779c64ea4efaac681290a5,
+  m_CorrespondingSourceObject: {fileID: 5934930055835736850, guid: ccdd1eedd4779c64ea4efaac681290a5,
     type: 3}
   m_PrefabInstance: {fileID: 1053256630}
   m_PrefabAsset: {fileID: 0}
@@ -5083,7 +5093,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053256635 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1331560738310560548, guid: ccdd1eedd4779c64ea4efaac681290a5,
+  m_CorrespondingSourceObject: {fileID: 8685376032240585984, guid: ccdd1eedd4779c64ea4efaac681290a5,
     type: 3}
   m_PrefabInstance: {fileID: 1053256630}
   m_PrefabAsset: {fileID: 0}

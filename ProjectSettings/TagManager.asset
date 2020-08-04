@@ -10,6 +10,9 @@ TagManager:
   - button
   - box
   - sentry_gun
+  - glass
+  - moving_platform_rail_end
+  - blast
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - Hazard
   - Corpse
   - Ignore_others
-  - 
+  - Glass
   - 
   - 
   - 
@@ -46,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 4123965785
     locked: 0

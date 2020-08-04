@@ -55,6 +55,7 @@ public class Level_select_script : MonoBehaviour
             levelItem.attempts = item.attempts;
             levelItem.topScore = item.topScore;
             levelItem.imageUrl = item.imageUrl;
+            levelItem.unlocked = item.unlocked;
 
             levels[i] = levelItem;
             i++;
@@ -103,15 +104,10 @@ public class Level_select_script : MonoBehaviour
             Level_object_script newLevelButtonScript = newLevelButton.GetComponent<Level_object_script>();
 
             newLevelButton.transform.parent = levelSelection.transform;
-            newLevelButton.transform.localPosition = new Vector3(0f, topMargin + (levelSelectionRectTransform.sizeDelta.y / 2) - 25, 0f);
+            newLevelButton.transform.localPosition = new Vector3(0f, topMargin + (levelSelectionRectTransform.sizeDelta.y / 2) - 20, 0f);
             newLevelButtonScript.levelData = item;
 
-            /*
-            RectTransform rt = newLevelButton.GetComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(120, 20);
-            */
-
-            topMargin = topMargin - 25;
+            topMargin = topMargin - 20;
             }
         }
     }
@@ -160,6 +156,7 @@ public class Level_select_script : MonoBehaviour
             newLevel.attempts = 0;
             newLevel.topScore = 0;
             newLevel.imageUrl = "1-Level_pictures/" + name;
+            newLevel.unlocked = i == 0 ? true : false;
 
             newLevelData[i] = newLevel;
             i++;
@@ -193,6 +190,7 @@ public class Level_select_script : MonoBehaviour
         public int attempts;
         public int topScore;
         public string imageUrl;
+        public bool unlocked;
     }
 
     [System.Serializable]
