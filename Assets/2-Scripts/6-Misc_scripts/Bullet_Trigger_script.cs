@@ -46,9 +46,17 @@ public class Bullet_Trigger_script : MonoBehaviour
             Destroy(parent, 0.3f);
         }
 
-        if (col.CompareTag("box")) {    
+        if (col.CompareTag("box")) {
             PlaySound(1);
-            // Kill or let bounce?
+            parent.transform.Find("Bullet").gameObject.SetActive(false);
+            parent.GetComponent<Bullet_script>().finalHit = true;
+            Destroy(parent, 0.3f);
+        }
+
+        if (col.CompareTag("explosive_barrel")) {
+            parent.transform.Find("Bullet").gameObject.SetActive(false);
+            parent.GetComponent<Bullet_script>().finalHit = true;
+            Destroy(parent, 0.3f);
         }
 
         if (col.CompareTag("glass")) {

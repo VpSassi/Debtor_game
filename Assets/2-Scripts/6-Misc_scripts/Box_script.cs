@@ -28,7 +28,9 @@ public class Box_script : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.CompareTag("bullet") && invisibilyTimer < 1) {
+        if (col.gameObject.CompareTag("bullet") && invisibilyTimer < 1 ||
+            col.gameObject.CompareTag("blast") && invisibilyTimer < 1 ||
+            col.gameObject.CompareTag("burn") && invisibilyTimer < 1) {
             BreakBox();
         }
     }

@@ -13,6 +13,8 @@ TagManager:
   - glass
   - moving_platform_rail_end
   - blast
+  - burn
+  - explosive_barrel
   layers:
   - Default
   - TransparentFX

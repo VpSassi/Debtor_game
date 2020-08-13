@@ -9,7 +9,8 @@ public class Button_script : MonoBehaviour
     private Animator buttonAnim;
     private GameObject Dima;
     private Dima_script dimaScript;
-    public float timer = 0;
+    private float timer = 0;
+    public float timerDuration = 3;
     private AudioSource buttonAudio;
 
     void Start()
@@ -36,7 +37,7 @@ public class Button_script : MonoBehaviour
         if (timer < 1) {
             pressed = !pressed;
             buttonAnim.SetBool("pressed", pressed);
-            timer = 3;
+            timer = timerDuration;
             buttonAudio.volume = AdjustedVolume();
             buttonAudio.Play();
         }

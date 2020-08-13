@@ -194,6 +194,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 134812683, guid: c6a62458d0f79e3488a20c31445bd793, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69375273972553791, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_Text
+      value: This is a description about the map
+      objectReference: {fileID: 0}
+    - target: {fileID: 69375273972553791, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 69375273972553791, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094325090916772707, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094325090916772707, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 18.275272
+      objectReference: {fileID: 0}
     - target: {fileID: 4140299845579432783, guid: c6a62458d0f79e3488a20c31445bd793,
         type: 3}
       propertyPath: m_Sprite
@@ -264,6 +293,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484544160925064207, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484544160925064207, guid: c6a62458d0f79e3488a20c31445bd793,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 104
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a62458d0f79e3488a20c31445bd793, type: 3}
