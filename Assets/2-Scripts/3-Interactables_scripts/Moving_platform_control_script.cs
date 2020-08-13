@@ -42,5 +42,6 @@ public class Moving_platform_control_script : MonoBehaviour
     void MovePlatform() { // moves platform between 2 rail ends and changes direction when hitting either one
         GameObject rail_end = railDirection == 0 ? rail_end_1 : rail_end_2;
         platform.transform.position = Vector2.MoveTowards(platform.transform.position, rail_end.transform.position, platformSpeed * Time.deltaTime);
+        platform.transform.localPosition = new Vector3(platform.transform.localPosition.x, platform.transform.localPosition.y, 20);
     }
 }

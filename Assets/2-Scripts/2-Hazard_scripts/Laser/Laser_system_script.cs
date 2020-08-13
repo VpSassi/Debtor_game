@@ -34,6 +34,10 @@ public class Laser_system_script : MonoBehaviour
     public AudioSource laserHitAudio;
     private bool playingFireAudio = false;
     private bool playingHitAudio = false;
+    public bool laserOnline = true;
+    private bool laserBallOn = true;
+    private float laserBallTimer = 0;
+    private GameObject middlePointObject;
 
     void Start()
     {
@@ -42,6 +46,8 @@ public class Laser_system_script : MonoBehaviour
         dimaScript = Dima.GetComponent<Dima_script>();
 
         Vector3 middlePoint = (laser_A.transform.Find("Laser_Target_A").position + laser_B.transform.Find("Laser_Target_B").position) / 2;
+
+        middlePointObject = Instantiate(new GameObject(), middlePoint, Quaternion.identity);
 
         Quaternion lookRot = GenericFunctions.GetLookRotation(laser_A.transform, laser_B.transform);
 
@@ -79,12 +85,23 @@ public class Laser_system_script : MonoBehaviour
 
     void Update()
     {
-        if (!isContinous) {
-            TimerCounter();
-        }
+        if (laserOnline) {
+            beam_A1.SetActive(!isDeathLaser && !overlord.alarmOn);
+            beam_A2.SetActive(!isDeathLaser && overlord.alarmOn);
+            beam_D.SetActive(isDeathLaser);
 
-        LaserFireController();
-        LaserHitFunc();
+            if (!isContinous) {
+            TimerCounter();
+            }
+
+            LaserFireController();
+            LaserHitFunc();
+        } else {
+            beam_A1.SetActive(false);
+            beam_A2.SetActive(false);
+            beam_D.SetActive(false);
+        }
+        
     }
 
     void TimerCounter() {
@@ -95,18 +112,25 @@ public class Laser_system_script : MonoBehaviour
 
         if (initialTimerDelay < 1) {
             timer += Time.deltaTime;
+            laserBallTimer += Time.deltaTime;
         }
 
         if (timer >= timerDuration) {
             timer = 0;
+            laserBallTimer = 0;
 
             laserOn = !laserOn;
+        }
+
+        if (laserBallTimer >= timerDuration - 0.2f) { // TODO: fix this
+            laserBallOn = !laserBallOn;
+            laserBallTimer = 0;
         }
     }
 
     void LaserFireController() {
-        float baseVolume = isDeathLaser ? 0.6f : 0.4f;
-        float distance = GenericFunctions.GetDistance(gameObject, Dima);
+        float baseVolume = isDeathLaser ? 0.4f : 0.4f;
+        float distance = GenericFunctions.GetDistance(middlePointObject, Dima);
         distance = distance > 100 ? 100 : distance;
         laserFireAudio.volume = baseVolume - (distance / 60);
 
@@ -135,33 +159,33 @@ public class Laser_system_script : MonoBehaviour
 
     void LaserBalls() {
         if (isDeathLaser) {
-            laser_Ball_A.SetActive(!laserOn);
-            laser_Ball_D_A.SetActive(laserOn);
+            laser_Ball_A.SetActive(!laserBallOn);
+            laser_Ball_D_A.SetActive(laserBallOn);
             laser_Ball_A1_A.SetActive(false);
             laser_Ball_A2_A.SetActive(false);
 
-            laser_Ball_B.SetActive(!laserOn);
-            laser_Ball_D_B.SetActive(laserOn);
+            laser_Ball_B.SetActive(!laserBallOn);
+            laser_Ball_D_B.SetActive(laserBallOn);
             laser_Ball_A1_B.SetActive(false);
             laser_Ball_A2_B.SetActive(false);
         } else {
-            laser_Ball_A.SetActive(!laserOn);
+            laser_Ball_A.SetActive(!laserBallOn);
             laser_Ball_D_A.SetActive(false);
             if (overlord.alarmOn) {
-                laser_Ball_A2_A.SetActive(laserOn);
+                laser_Ball_A2_A.SetActive(laserBallOn);
                 laser_Ball_A1_A.SetActive(false);
             } else {
-                laser_Ball_A1_A.SetActive(laserOn);
+                laser_Ball_A1_A.SetActive(laserBallOn);
                 laser_Ball_A2_A.SetActive(false);
             }
 
-            laser_Ball_B.SetActive(!laserOn);
+            laser_Ball_B.SetActive(!laserBallOn);
             laser_Ball_D_B.SetActive(false);
             if (overlord.alarmOn) {
-                laser_Ball_A2_B.SetActive(laserOn);
+                laser_Ball_A2_B.SetActive(laserBallOn);
                 laser_Ball_A1_B.SetActive(false);
             } else {
-                laser_Ball_A1_B.SetActive(laserOn);
+                laser_Ball_A1_B.SetActive(laserBallOn);
                 laser_Ball_A2_B.SetActive(false);
             }
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -143,6 +144,12 @@ public class Level_select_script : MonoBehaviour
 
         LevelData[] newLevelData = new LevelData[info.Length];
         Settings newSettings = new Settings();
+
+        print(info[0].Name.Replace(".unity", ""));
+
+        Array.Sort(info, delegate(FileInfo item1, FileInfo item2) {
+            return item1.Name.Length.CompareTo(item2.Name.Length);
+        });
         
         int i = 0;
         
@@ -168,8 +175,6 @@ public class Level_select_script : MonoBehaviour
         newLevelsData.settings = newSettings;
 
         File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData,true));
-
-        // TODO: add the scenes to be built in code as well so you don't have to do it manually
 
         SceneManager.LoadScene("Main_menu");
     }

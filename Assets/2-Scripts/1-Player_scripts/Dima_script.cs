@@ -56,12 +56,22 @@ public class Dima_script : MonoBehaviour
         DimaFunc();
     }
 
+    /*
     void OnCollisionExit2D(Collision2D col) {
         isGrounded = false;
     }
 
     void OnCollisionStay2D(Collision2D col) {
         isGrounded = true;
+    }
+    */
+
+    void OnTriggerStay2D(Collider2D col) {
+        isGrounded = true;
+    }
+
+    void OnTriggerExit2D(Collider2D col) {
+        isGrounded = false;
     }
 
     void DimaFunc() { // Dima movement, shooting and other basic functionalities

@@ -14,11 +14,13 @@ public class Explosive_barrel_script : MonoBehaviour
     public AudioSource explosionAudio;
     public AudioSource burnAudio;
     private GameObject Dima;
+    public GameObject burn;
 
     void Start()
     {
         barrel_B.SetActive(false);
         fire_damage.enableDamage = false;
+        burn.SetActive(false);
         Dima = GameObject.Find("Dima");
     }
 
@@ -37,6 +39,7 @@ public class Explosive_barrel_script : MonoBehaviour
     void BlowUpBarrel() {
         barrel_A.SetActive(false);
         barrel_B.SetActive(true);
+        burn.SetActive(true);
         fire_damage.enableDamage = true;
 
         Instantiate(blast, transform.position, Quaternion.identity);

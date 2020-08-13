@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 2241803068427191997}
   m_Layer: 0
   m_Name: Toxic_barrel
-  m_TagString: Untagged
+  m_TagString: explosive_barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,6 +501,7 @@ MonoBehaviour:
   blown: 0
   explosionAudio: {fileID: 458275671706002963}
   burnAudio: {fileID: 2241803068427191997}
+  burn: {fileID: 5990259350368244429}
 --- !u!82 &458275671706002963
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5572,7 +5573,7 @@ GameObject:
   - component: {fileID: 9140104039509772675}
   m_Layer: 0
   m_Name: Toxic_damage
-  m_TagString: Untagged
+  m_TagString: burn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

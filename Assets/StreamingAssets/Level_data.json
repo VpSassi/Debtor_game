@@ -4,8 +4,8 @@
             "index": 0,
             "name": "1",
             "description": "Boxes",
-            "attempts": 63,
-            "topScore": 2570,
+            "attempts": 0,
+            "topScore": 0,
             "imageUrl": "1-Level_pictures/1",
             "unlocked": true
         },
@@ -30,7 +30,7 @@
         {
             "index": 3,
             "name": "4",
-            "description": "Alarm lazors",
+            "description": "Panic room",
             "attempts": 0,
             "topScore": 0,
             "imageUrl": "1-Level_pictures/4",
@@ -39,7 +39,7 @@
         {
             "index": 4,
             "name": "5",
-            "description": "Sentry guns",
+            "description": "Automated security",
             "attempts": 0,
             "topScore": 0,
             "imageUrl": "1-Level_pictures/5",
@@ -52,6 +52,168 @@
             "attempts": 0,
             "topScore": 0,
             "imageUrl": "1-Level_pictures/6",
+            "unlocked": true
+        },
+        {
+            "index": 6,
+            "name": "7",
+            "description": "Tiny gauntlet",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/7",
+            "unlocked": true
+        },
+        {
+            "index": 7,
+            "name": "8",
+            "description": "Glass house",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/8",
+            "unlocked": true
+        },
+        {
+            "index": 8,
+            "name": "9",
+            "description": "Falling with style",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/9",
+            "unlocked": true
+        },
+        {
+            "index": 9,
+            "name": "10",
+            "description": "Chemical romance",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/10",
+            "unlocked": true
+        },
+        {
+            "index": 10,
+            "name": "11",
+            "description": "Don't look down",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/11",
+            "unlocked": true
+        },
+        {
+            "index": 11,
+            "name": "12",
+            "description": "Storage of doom",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/12",
+            "unlocked": true
+        },
+        {
+            "index": 12,
+            "name": "13",
+            "description": "Elevator",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/13",
+            "unlocked": true
+        },
+        {
+            "index": 13,
+            "name": "14",
+            "description": "Target practice",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/14",
+            "unlocked": true
+        },
+        {
+            "index": 14,
+            "name": "15",
+            "description": "Fun room",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/15",
+            "unlocked": true
+        },
+        {
+            "index": 15,
+            "name": "16",
+            "description": "Twice the T you'll ever be",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/16",
+            "unlocked": true
+        },
+        {
+            "index": 16,
+            "name": "17",
+            "description": "Guessing game",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/17",
+            "unlocked": true
+        },
+        {
+            "index": 17,
+            "name": "18",
+            "description": "Watch your aim",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/18",
+            "unlocked": true
+        },
+        {
+            "index": 18,
+            "name": "19",
+            "description": "Spiralling out of control",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/19",
+            "unlocked": true
+        },
+        {
+            "index": 19,
+            "name": "20",
+            "description": "Got a bone to pick with you",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/20",
+            "unlocked": true
+        },
+        {
+            "index": 20,
+            "name": "21",
+            "description": "Hot on your tail",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/21",
+            "unlocked": true
+        },
+        {
+            "index": 21,
+            "name": "22",
+            "description": "6 rooms",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/22",
+            "unlocked": true
+        },
+        {
+            "index": 22,
+            "name": "23",
+            "description": "Big bad bunker",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/23",
+            "unlocked": true
+        },
+        {
+            "index": 23,
+            "name": "24",
+            "description": "Gaze into the abyss",
+            "attempts": 0,
+            "topScore": 0,
+            "imageUrl": "1-Level_pictures/24",
             "unlocked": true
         }
     ],

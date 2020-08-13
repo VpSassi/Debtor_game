@@ -225,6 +225,8 @@ GameObject:
   - component: {fileID: 5888572513645202336}
   - component: {fileID: 5537605583034600479}
   - component: {fileID: 1092975336071089991}
+  - component: {fileID: 7568088553717893085}
+  - component: {fileID: 2511540168637386736}
   m_Layer: 8
   m_Name: Dima
   m_TagString: Player
@@ -346,8 +348,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05416441, y: 2.4813836}
-  m_Size: {x: 1.8374186, y: 4.1818213}
+  m_Offset: {x: 0.05416441, y: 2.2440479}
+  m_Size: {x: 1.8374186, y: 4.6564927}
   m_Direction: 0
 --- !u!95 &5537605583034600485
 Animator:
@@ -518,6 +520,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &7568088553717893085
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423541812094973454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010330439, y: 0.1548624}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3328161, y: 1.1984673}
+  m_EdgeRadius: 0
+--- !u!61 &2511540168637386736
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423541812094973454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.013477802, y: 2.0342097}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4642406, y: 1.7189646}
+  m_EdgeRadius: 0
 --- !u!1 &1456761739423429838
 GameObject:
   m_ObjectHideFlags: 0

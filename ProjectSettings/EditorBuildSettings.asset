@@ -29,4 +29,55 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1-Scenes/2-Map_scenes/7.unity
     guid: a94a9ab63121c12448fdfe246aee5f21
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/8.unity
+    guid: 720d3b83121613948bfc282dbc3a6014
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/9.unity
+    guid: e615478267dcb204bbbe1d428f844ba5
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/10.unity
+    guid: 37e1dc4dbc9ab394189986c1b35d04cb
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/11.unity
+    guid: fa36a5062671fc04f9a05ebd96e5dec9
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/12.unity
+    guid: bd926c6e0da077049ab6b9f34c71ca0d
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/13.unity
+    guid: 8675ac8f0b613e9418accabf43f76fb2
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/14.unity
+    guid: 8cd229640b2a2874f93ae67b421e281c
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/15.unity
+    guid: bb8b7a07a6f95d54ba369cc95ec445e7
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/16.unity
+    guid: 3dfd4b77493c44a448161b21dedbdcbc
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/17.unity
+    guid: 76b9b3050d64087468d2a41812c21914
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/18.unity
+    guid: 24780adaf7f6c1241ae37533b8d2557e
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/19.unity
+    guid: eef6cd7bca1c16a42b38f05af0cbf258
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/20.unity
+    guid: a4a07c13d7a592d4f9a227e7950f79b0
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/21.unity
+    guid: a5bf6fb5122a1a34eab7bf95a19fd061
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/22.unity
+    guid: 6052888f73efd4b499288d35e97b65f8
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/23.unity
+    guid: 770d5a0fb4538494eb24cc405faff6c8
+  - enabled: 1
+    path: Assets/1-Scenes/2-Map_scenes/24.unity
+    guid: ee27af3c3c820c24995ee586f680044b
   m_configObjects: {}
