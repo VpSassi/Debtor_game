@@ -2275,6 +2275,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 947960642555536091, guid: 820d589bf92e8c34bba979f871e78edd,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2651c680507f1bc45ba6453abd97f85c, type: 3}
+    - target: {fileID: 1214483980451019404, guid: 820d589bf92e8c34bba979f871e78edd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2348542509393814068, guid: 820d589bf92e8c34bba979f871e78edd,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -2314,6 +2324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732053147598131406, guid: 820d589bf92e8c34bba979f871e78edd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7732053148603550090, guid: 820d589bf92e8c34bba979f871e78edd,
         type: 3}

@@ -130,55 +130,9 @@ public class Level_select_script : MonoBehaviour
 
         if (levelChangeTimer > 1.5f && playLevel) {
             playLevel = false;
-
-            // if (SceneManager.GetSceneByName(selectedLevel.name.ToString()).IsValid()) { // FIX THIS
             SceneManager.LoadScene(selectedLevel.name);
-            // }
         }
     }
-
-    // !!! REMOVE FROM FINAL BUILD !!! vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv ******
-    public void CalibrateLevelsData() { // calibrate levels scenes wit hthe JSON, so that it doesnt need to be done manually
-        DirectoryInfo dir = new DirectoryInfo("Assets/1-Scenes/2-Map_scenes");
-        FileInfo[] info = dir.GetFiles("*.unity");
-
-        LevelData[] newLevelData = new LevelData[info.Length];
-        Settings newSettings = new Settings();
-
-        print(info[0].Name.Replace(".unity", ""));
-
-        Array.Sort(info, delegate(FileInfo item1, FileInfo item2) {
-            return item1.Name.Length.CompareTo(item2.Name.Length);
-        });
-        
-        int i = 0;
-        
-        foreach (FileInfo file in info) {
-            string name = file.Name.Replace(".unity", "");
-            LevelData newLevel = new LevelData();
-
-            newLevel.index = i;
-            newLevel.name = name;
-            newLevel.description = "";
-            newLevel.attempts = 0;
-            newLevel.topScore = 0;
-            newLevel.imageUrl = "1-Level_pictures/" + name;
-            newLevel.unlocked = i == 0 ? true : false;
-
-            newLevelData[i] = newLevel;
-            i++;
-        }
-
-        LevelsData newLevelsData = new LevelsData();
-        newLevelsData.levelData = newLevelData;
-        newLevelsData.latestLevel = 0;
-        newLevelsData.settings = newSettings;
-
-        File.WriteAllText(Application.streamingAssetsPath + "/Level_data.json", JsonUtility.ToJson(newLevelsData,true));
-
-        SceneManager.LoadScene("Main_menu");
-    }
-    // !!! REMOVE FROM FINAL BUILD !!! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ******
 
     [System.Serializable]
     public class LevelsData {

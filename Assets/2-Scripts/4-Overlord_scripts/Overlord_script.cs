@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
-using HajyGames;
 
 public class Overlord_script : MonoBehaviour
 {
@@ -50,15 +49,6 @@ public class Overlord_script : MonoBehaviour
     }
 
     void Update() {
-        
-        // TODO: move this to Class1.cs
-        if (Input.GetKeyDown(KeyCode.X)) { // sets universal stop bool, that can be used in other functions for testing
-            GlobalVariables.stop = !GlobalVariables.stop;
-
-            // Currently used in:
-            // * Dima_script --> RotateSprite()
-            // * Crosshair_script --> MoveCrosshair()
-        }
 
         if (playerDead && !stageWin) {
             ded.SetActive(true);
@@ -112,7 +102,10 @@ public class Overlord_script : MonoBehaviour
                                 "SCORE" + "\n \n - " + finalScore;
         
         Level_select_script.LevelsData newLevelsData = levelsData;
-        newLevelsData.levelData[levelsData.latestLevel].topScore = finalScore;
+        newLevelsData.levelData[levelsData.latestLevel].topScore = levelsData.levelData[levelsData.latestLevel].topScore < finalScore 
+        ? finalScore 
+        : levelsData.levelData[levelsData.latestLevel].topScore;
+        
         if (levelsData.latestLevel != 4) {
             newLevelsData.levelData[levelsData.latestLevel + 1].unlocked = true;
         }

@@ -45,7 +45,7 @@ public class Teleporter_End_script : MonoBehaviour
     }
 
     void CheckIfWin() {
-        if (playerOnPlatform && dimaScript.pressedActionButton) {
+        if (playerOnPlatform && !overlord.playerDead) {
             overlord.stageWin = true;
             effect.SetActive(true);
         }
