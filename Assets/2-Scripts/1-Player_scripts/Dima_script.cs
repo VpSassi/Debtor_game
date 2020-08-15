@@ -21,7 +21,6 @@ public class Dima_script : MonoBehaviour
     public GameObject face_D;
     public float moveDir = 0; 
     public GameObject muzzleFlash;
-    public bool pressedActionButton = false;
     private Animator Dima_Animator;
     private GameObject RightArmSolver;
     private GameObject LeftArmSolver;
@@ -56,16 +55,6 @@ public class Dima_script : MonoBehaviour
         DimaFunc();
     }
 
-    /*
-    void OnCollisionExit2D(Collision2D col) {
-        isGrounded = false;
-    }
-
-    void OnCollisionStay2D(Collision2D col) {
-        isGrounded = true;
-    }
-    */
-
     void OnTriggerStay2D(Collider2D col) {
         isGrounded = true;
     }
@@ -82,7 +71,6 @@ public class Dima_script : MonoBehaviour
         }
         if (!overlord.playerDead && !overlord.stageWin) {
             DimaMovement();
-            ActionButtonFunc();
             ShootTimerFunc();
 
             spriteRotation = Camera.main.ScreenToWorldPoint(Input.mousePosition).x > transform.position.x ? 1 : -1;
@@ -118,9 +106,7 @@ public class Dima_script : MonoBehaviour
     }
 
     void RotateSprite(float spriteRotation) { // Sprite rotation towards aiming direction
-        if (!GlobalVariables.stop) { // TESTING
-            transform.localScale = new Vector3(Mathf.Floor(spriteRotation) , 1, 1);
-        }
+        transform.localScale = new Vector3(Mathf.Floor(spriteRotation) , 1, 1);
     }
 
     void DimaShoot() { // Shoot a bullet towards crosshair
@@ -159,16 +145,6 @@ public class Dima_script : MonoBehaviour
         face_D.SetActive(true);
 
         overlord.playerDead = true;
-    }
-
-    void ActionButtonFunc() { // sets action button bool
-        if (Input.GetKeyDown(KeyCode.E)) {
-            pressedActionButton = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.E)) {
-            pressedActionButton = false;
-        }
     }
 
     void PlayGunSound() { // plays one of 3 gun sounds
